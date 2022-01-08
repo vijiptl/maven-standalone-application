@@ -36,6 +36,22 @@
 		</dependency>
 
 	</dependencies>
+	
+	<distributionManagement>
+	
+	    <repository>
+	      <id>nexus</id>
+	      <name>Java Standalone Releases Nexus Repository</name>
+	      <url>http://13.127.26.25:9980/vijiptl/repository/Java-Standalone-Release/</url>
+	    </repository>
+	    
+	    <snapshotRepository>
+	      <id>nexus</id>
+	      <name>Java Standalone Snapshot Nexus Repository </name>
+	      <url>http://13.127.26.25:9980/vijiptl/repository/Java-Standalone-Snapshot/</url>
+	    </snapshotRepository>
+	    
+	</distributionManagement>
 
 	<!-- Committing and updating changes through Maven, by using below mvn command. 
 		For Commiting mvn -Dmessage="Updated using maven" scm:checkin For updating 
