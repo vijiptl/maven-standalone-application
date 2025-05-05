@@ -2,12 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repo') {
+        stage('Clone Repository') {
             steps {
-                echo 'Cloning the Git repository...'
-                checkout scm
+                script {
+                    echo 'Cloning the Git repository with SSL verification disabled...'
+                    git url: 'https://github.com/vijiptl/maven-standalone-application.git', branch: 'main'
+                }
             }
         }
     }
 }
-
