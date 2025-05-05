@@ -1,19 +1,24 @@
 pipeline {
     agent any
-    
+
     environment {
-        GIT_SSL_NO_VERIFY = 'true'  // Disable SSL verification globally
+        // Skip SSL verification for Git
+        GIT_SSL_NO_VERIFY = 'true'
     }
-    
+
     stages {
         stage('Clone Repository') {
             steps {
                 script {
-                    echo 'Cloning the Git repository with SSL verification disabled...'
-                    sh 'git config --global http.sslVerify false'
-                    git url: 'https://github.com/vijiptl/maven-standalone-application.git', branch: 'master'
+                    // Define the Git repository URL
+                    def gitUrl = 'https://github.com/your-repository.git'
+
+                    // Clone the Git repository without SSL verification
+                    git url: gitUrl
                 }
             }
         }
+
+        // Additional stages can be added here if needed
     }
 }
